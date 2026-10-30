@@ -1,7 +1,7 @@
 TRUCK OR SHOP? — standalone app files
 =====================================
 
-These files run on their own. Nothing here connects to Claude.
+These files run on their own. 
 
   settings.js            THE FILE YOU EDIT: donation link, prices, date
   index.html             the app itself (no need to touch)
