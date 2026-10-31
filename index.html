@@ -202,7 +202,22 @@ function iconFor(p){
 
 /* state */
 const S={order:[],reward:"",bonus:"",level:"",only:false,overrides:{}};
-function load(){try{const d=JSON.parse(localStorage.getItem("tos-v1")||"null");if(d)Object.assign(S,d);}catch(e){}}
+function load(){
+  try{
+    const d=JSON.parse(localStorage.getItem("tos-v1")||"null");
+    if(d){
+      Object.assign(S,d);
+      // Keep previously saved orders and edited prices when migrating the product spelling.
+      if(Array.isArray(S.order))for(const item of S.order){
+        if(item.n==="Colorful Omelet")item.n="Colourful Omelet";
+      }
+      if(S.overrides&&Object.prototype.hasOwnProperty.call(S.overrides,"Colorful Omelet")){
+        S.overrides["Colourful Omelet"]=S.overrides["Colorful Omelet"];
+        delete S.overrides["Colorful Omelet"];
+      }
+    }
+  }catch(e){}
+}
 function save(){try{localStorage.setItem("tos-v1",JSON.stringify(S));}catch(e){}}
 const priceOf=p=>S.overrides[p.name]??p.price;
 const $=id=>document.getElementById(id);
@@ -291,6 +306,8 @@ function lev(a,b){if(Math.abs(a.length-b.length)>3)return 9;const m=[];for(let i
   for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return m[a.length][b.length];}
 function score(p,q){
   const k=p.key;if(!q)return 1;
+  // Accept both US and UK spellings when searching.
+  if(p.name==="Colourful Omelet"&&"colorful omelet".includes(q))return 80;
   if(k===q)return 100;if(k.startsWith(q))return 90;
   const words=k.split(" ");if(words.some(w=>w.startsWith(q)))return 80;
   if(k.includes(q))return 70;
