@@ -67,7 +67,7 @@ Blueberry Chutney|Jam Maker|70|579
 Blueberry Muffin|Bakery|33|230
 Blueberry Waffles|Waffle Maker|118|669
 Bracelet|Jeweler|38|514
-Bread|Bakery|4|21
+Bread|Bakery|2|21
 Breakfast Bowl|Porridge Bar|119|604
 Breakfast Waffles|Waffle Maker|119|424
 Bright Bouquet|Flower Shop|65|338
@@ -103,7 +103,7 @@ Cherry|Trees|22|68
 Cherry Jam|Jam Maker|38|334
 Cherry Juice|Juice Press|30|216
 Cherry Popsicle|Ice Cream Maker|33|352
-Chicken Feed|Feed Mill|2|7
+Chicken Feed|Feed Mill|3|7
 Chickpea|Crops|95|18
 Chickpea Stew|Stew Pot|106|284
 Chili Fudge|Fudge Shop|104|540
@@ -129,7 +129,7 @@ Coconut Ice Cream|Ice Cream Maker|102|320
 Coffee Bean|Trees|42|64
 Coleslaw|Salad Bar|75|468
 Colorful Candles|Candle Maker|84|324
-Colorful Omelet|Omelet Station|77|136
+Colourful Omelet|Omelet Station|77|136
 Cookie|Bakery|10|104
 Cookie Cupcake|Cupcake Maker|114|712
 Corn|Crops|2|7
